@@ -1,4 +1,4 @@
-# Debian installer CD for PC Engines APU board with mSATA drive
+# Debian installer CD for PC Engines APU board
 
 This is a set of configuration files for building a Debian installation
 CD optimized for the APU platform of PC Engines:  
@@ -26,10 +26,10 @@ There are two profiles defined in profiles/ directory: "apu64" and "manual".
 This profile is designed to automate as much as possible.
 
 The default and only user is set to "**root**" and the password is "**debian**".  
-This is defined in "profiles/apu64.preseed".
-
-The default language is English and the keyboard configuration is Portuguese.
+The default language is English (US) and the keyboard layout is entered manually.  
 This can be changed in "profiles/apu64.preseed".
+
+The SSH daemon has `PermitRootLogin yes` enable, which allows the root to login via ssh.
 
 The disk layout does not allocate a swap partition (the APU board has 2
 or 4GB RAM). If you need swap, you can add a swapfile in root
@@ -70,8 +70,7 @@ cd pcengines-apu-debian-cd
 ```
 When step 3. is finished, the CD image is available at images/.
 
-Notes
------
+## Notes
 
 The kernel boots with "elevator=deadline", which optimizes the I/O
 performance for SSD drives.
@@ -82,4 +81,4 @@ https://wiki.debian.org/SSDOptimization
 
 If you need a live or rescue CD, you can get a Live CD from Voyage
 Linux. It works fine, the only minor issue is that it switches the
-serial console to 9600 baud: http://linux.voyage.hk/
+serial console to 9600 baud: http://linux.voyage.hk/.
