@@ -29,3 +29,10 @@ fi
 EOF
 
 chmod 755 /etc/cron.hourly/pcengines_apu_fstrim
+
+cat <<EOF >> /root/.bashrc
+
+if [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
+fi
+EOF
