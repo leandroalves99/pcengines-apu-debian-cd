@@ -12,3 +12,5 @@ hdparm
 smartmontools
 dnsutils
 libpam-systemd
+bash-completion
+git
