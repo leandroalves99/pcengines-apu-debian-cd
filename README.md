@@ -54,21 +54,25 @@ The manual profile does not install the fstrim cronjob.
 The installation ISO image is about 300MB in size, and it's a network installation.
 
 To create the CD image on the build machine:
-1. Install prerequisites
+1. Install prerequisites:
 ```
 apt-get update
 apt-get install -y simple-cdd git xorriso lsb-release
 ```
+
 2. Clone this repository and cd to repository folder:
 ```
 git clone https://github.com/ssinyagin/pcengines-apu-debian-cd.git
 cd pcengines-apu-debian-cd
-```
-3. Build CD image
+```  
+  - Add executable rights to .postinst file:  `chmod +x profiles/apu64.postinst`
+
+3. Build CD image:
 ```
 ./build apu64
 ```
 When step 3. is finished, the CD image is available at images/.
+
 
 ## Notes
 
